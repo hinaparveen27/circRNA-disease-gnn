@@ -180,6 +180,7 @@ mean       0.389757  0.809722  0.496118
 std        0.004112  0.019003  0.022500
 
 -------------------------------------------------
+DEGREE + LOG DEGREE + BETWEENNESS CENTRALITY + ONE HOT
 ===== FINAL RESULTS =====
    seed  best_val_loss       auc      aupr
 0    42       0.380584  0.827477  0.428316

@@ -17,9 +17,10 @@ class HeteroGraphSAGE(nn.Module):
             ("miRNA", "interacts", "disease"): SAGEConv((-1, -1), hidden_channels),
             ("circRNA", "associated", "disease"): SAGEConv((-1, -1), hidden_channels),
 
-            ("miRNA", "rev_interacts", "circRNA"): SAGEConv(in_channels, hidden_channels),
-            ("disease", "rev_interacts", "miRNA"): SAGEConv(in_channels, hidden_channels),
-            ("disease", "rev_associated", "circRNA"): SAGEConv(in_channels, hidden_channels),
+            ("miRNA", "rev_interacts", "circRNA"): SAGEConv((-1, -1), hidden_channels),
+            ("disease", "rev_interacts", "miRNA"): SAGEConv((-1, -1), hidden_channels),
+            ("disease", "rev_associated", "circRNA"): SAGEConv((-1, -1), hidden_channels),
+
         }
 
         # -------- Layer 2: Hidden → Hidden --------
@@ -42,6 +43,11 @@ class HeteroGraphSAGE(nn.Module):
             ("miRNA", "rev_interacts", "circRNA"): SAGEConv(hidden_channels, out_channels),
             ("disease", "rev_interacts", "miRNA"): SAGEConv(hidden_channels, out_channels),
             ("disease", "rev_associated", "circRNA"): SAGEConv(hidden_channels, out_channels),
+
+            ("circRNA", "gip_sim", "circRNA"): SAGEConv(hidden_channels, out_channels),
+            ("miRNA", "gip_sim", "miRNA"): SAGEConv(hidden_channels, out_channels),
+
+           
         }
 
         self.conv1 = HeteroConv(relations_1, aggr="mean")

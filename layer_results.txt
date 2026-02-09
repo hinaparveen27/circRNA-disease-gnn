@@ -13,19 +13,19 @@ Mean ± Std
 mean       0.388309  0.824277  0.491261
 std        0.007193  0.009047  0.035740
 
-AFTER ADDING LAYERS(REMOVING RESIDUALS)
+AFTER ADDING LAYERS(REMOVING RESIDUALS) - 3lAYER
 ===== FINAL RESULTS =====
    seed  best_val_loss       auc      aupr
-0    42       0.385279  0.921917  0.570025
-1    43       0.396583  0.924483  0.616280
-2    44       0.401772  0.929152  0.641099
-3    45       0.385056  0.933215  0.596122
-4    46       0.386855  0.916981  0.575985
+0    42       0.405179  0.919957  0.608815
+1    43       0.396775  0.936137  0.631870
+2    44       0.434770  0.916091  0.608305
+3    45       0.389216  0.941768  0.599735
+4    46       0.445969  0.910014  0.619204
 
 Mean ± Std
       best_val_loss       auc      aupr
-mean       0.391109  0.925150  0.599902
-std        0.007622  0.006298  0.029344
+mean       0.414382  0.924793  0.613586
+std        0.024705  0.013549  0.012333
 
 (with residuals)
 ===== FINAL RESULTS =====
@@ -82,3 +82,17 @@ Mean ± Std
       best_val_loss       auc      aupr
 mean       0.389938  0.943140  0.643844
 std        0.003197  0.006863  0.038832
+
+
+GAT
+LAYER 3 (nO gip)
+========== FINAL SUMMARY ==========
+Seed 42: AUC=0.9523, AUPR=0.7052
+Seed 43: AUC=0.9046, AUPR=0.4945
+Seed 44: AUC=0.9394, AUPR=0.7205
+Seed 45: AUC=0.9424, AUPR=0.6231
+Seed 46: AUC=0.9288, AUPR=0.5240
+
+Mean ± Std over seeds
+AUC  : 0.9335 ± 0.0163
+AUPR : 0.6135 ± 0.0918
